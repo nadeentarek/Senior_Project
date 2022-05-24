@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/styles.css" rel="stylesheet" type="text/css"/>
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+.topbar {
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    width: 100%;
+    padding: 0 20px;
+    height: 60px;
+    display: grid;
+    grid-template-columns: 2fr 10fr 0.4fr 1fr;
+    align-items: center;
+    z-index: 1;
+}
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo h2 {
+    color: #299B63;
+}
+
+
+/* sidebar */
+
+.sidebar {
+    position: fixed;
+    top: 60px;
+    width: 260px;
+    height: calc(100% - 60px);
+    background: #299B63;
+    overflow-x: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.sidebar ul {
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    width: 100%;
+    list-style: none;
+}
+
+.sidebar ul li:hover {
+    background: #fff;
+}
+
+.sidebar ul li:hover a {
+    color: #299B63;
+}
+
+.sidebar ul li a {
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a i {
+    min-width: 60px;
+    font-size: 24px;
+    text-align: center;
+}
+
+
+/* main */
+
+.main {
+    position: absolute;
+    top: 60px;
+    width: calc(100% - 260px);
+    min-height: calc(100vh - 60px);
+    left: 260px;
+    background: #f5f5f5;
+    
+}
+
+.cards {
+    width: 100%;
+    padding: 35px 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.cards .card {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.number {
+    font-size: 35px;
+    font-weight: 500;
+    color: #299B63;
+}
+
+.card-name {
+    color: #888;
+    font-weight: 600;
+}
+
+.icon-box i {
+    font-size: 45px;
+    color: #299b63;
+}
+
+
+/* charts */
+
+.charts {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+}
+
+.chart {
+   
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    /*
+    background-image: url("silo2.jpg");
+    background-size: 110%;
+    background-repeat: no-repeat;
+    */
+
+    
+}
+
+.chartmain {
+   
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+   width: 100%;
+   
+   background-image: url("silo1.jpeg");
+   background-size: 110%;
+   background-repeat: no-repeat;
+
+   
+}
+
+.chart h2 {
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #666;
+    text-align: center
+}
+
+@media (max-width:1115px) {
+    .sidebar {
+        width: 60px;
+    }
+    .main {
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+}
+
+@media (max-width:880px) {
+    /* .topbar {
+        grid-template-columns: 1.6fr 6fr 0.4fr 1fr;
+    } */
+    .fa-bell {
+        justify-self: left;
+    }
+    .cards {
+        width: 100%;
+        padding: 35px 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+    .charts {
+        grid-template-columns: 1fr;
+    }
+    .doughnut-chart {
+        padding: 10px;
+    }
+    #doughnut {
+        padding: 10px;
+    }
+}
+
+@media (max-width:500px) {
+    .topbar {
+        grid-template-columns: 1fr 5fr 0.4fr 1fr;
+    }
+    .logo h2 {
+        font-size: 20px;
+    }
+    .search {
+        width: 80%;
+    }
+    .search input {
+        padding: 0 20px;
+    }
+    .fa-bell {
+        margin-right: 5px;
+    }
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    .doughnut-chart {
+        padding: 10px;
+    }
+    #doughnut {
+        padding: 10px;
+    }
+    .user {
+        width: 40px;
+        height: 40px;
+    }
+}
+    </style>
+    <title>Admin panel</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+                <h2>Mold Busters</h2>
+            </div>
+            
+            
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="fas fa-th-large"></i>
+                        <div>Dashboard</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/">
+                        <i class="fas fa-warehouse"></i>
+                        <div>Silo 1</div>
+                        
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/">
+                        <i class="fas fa-warehouse"></i>
+                        <div>Silo 2</div>
+                        
+                    </a>
+                </li>
+                <li>
+                    <a href="AllReadings">
+                        <i class="fas fa-chart-bar"></i>
+                        <div>History</div>
+                    </a>
+                </li>
+
+               
+                
+            </ul>
+        </div>
+        <div class="main">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number">44</div>
+                        <div class="card-name">Number of sensor pairs</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fa fa-thermometer"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number"><%=num_anomalies%></div>
+                        <div class="card-name">Anomalies Detected</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fa fa-window-close"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number"><%=num_time%></div>
+                        <div class="card-name">Time of Latest Anomaly</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fa fa-clock"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number"><%=num_pair%></div>
+                        <div class="card-name">Sensor Pair ID of Latest Anomaly</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fa fa-eye"></i>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="charts">
+                <div class="chartmain">
+                    
+                    <canvas id="lineChart"></canvas>
+                    
+                </div>
+                <div class="chart doughnut-chart" height="200">
+                    <h2>Data Readings</h2>
+                    <canvas id="doughnut"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.3.7/mqtt.min.js" integrity="sha512-tc5xpAPaQDl/Uxd7ZVbV66v94Lys0IefMJSdlABPuzyCv0IXmr9TkqEQvZiWKRoXMSlP5YPRwpq2a+v5q2uzMg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="/chart1.js"></script>
+    <script>
+        //const mqtt=require('mqtt');
+        //var client = mqtt.connect("ws://broker.hivemq.com:8000");
+        // connect to hive mqtt broker
+        var client = mqtt.connect('ws://broker.hivemq.com:8000/mqtt');
+
+var topic = 'siloAnomaly/#'
+
+
+    client.on('connect', ()=>{
+        client.subscribe(topic)
+        console.log("subscribed successfully to topic:",topic)
+    })
+   // var flag = false;
+    client.on('message', (topic, message)=>{
+        
+        message = message.toString()
+        console.log("Message recieved!")
+        console.log(message)
+        //flag = true;
+        Swal.fire({
+            title: 'Anomaly Detected!',
+            text: 'Sensor Pair ID: '+7,
+            icon: 'warning',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            location.reload();
+        });
+
+    });
+
+    </script>
+    <script>
+        var ctx = document.getElementById('lineChart').getContext('2d');
+       
+       // for (var i = 0; i < newListItems.length ; i++)
+       const key = ("<%-num_keys%>");
+       //alert(key)
+     //  alert(typeof key)
+       var keys = key.split(',');
+      //alert(keys)
+     // alert(typeof(keys))
+       const value = ("<%-num_vals%>");
+       var values = value.split(',');
+      
+       const pair =("<%-lst_anomalies%>");
+       var pairs = pair.split(',');
+       const colors =[];
+   
+      for (i=0;i<values.length;i++)
+      {
+        //alert(typeof keys[i])  ;
+        if(values[i]>='true')
+          colors.push("red");
+          else 
+          colors.push("green");
+      }
+      
+      //alert(colors);
+var myChart = new Chart(ctx, {
+    type: 'line',
+    
+    data: {
+        
+        labels: keys,
+       
+        datasets: [{
+            //label: 'sensor pair coordinates'+'('++')',
+            data: [0.15168938155080958, 0.10086946402390407, 0.9947503538057517, 0.1617264159566193, 0.7419750848000585, 0.22866319067323482, 0.3264630451856164, 0.18668089924757902, 0.5965071345420354, 0.4231195583727513, 0.9561054637338378, 0.861626284349629, 0.8515143205447192, 0.7086214765355605, 0.8666083609738235, 0.9992012218215974, 0.3654645206014028, 0.18394269229739513, 0.1455337998148578, 0.5203961234044371, 0.2596948792700241, 0.4416361573440194, 0.5030008377379354, 0.7818267482554129, 0.7628720759800346, 0.9161159471200528, 0.25600402449178483, 0.8287050731490198, 0.7123164856061012, 0.5855817240596368, 0.763828476061868, 0.046471281555453436, 0.07193165979043648, 0.259192575335494, 0.5503276460995764, 0.15156568637588186, 0.1878778059884313, 0.28284875793047626, 0.4934961793606186, 0.5089154760181674, 0.429308212251558, 0.9505374720011862, 0.5977308607164273, 0.5344085868735485],
+            backgroundColor:colors,
+            pointRadius: 5,
+            borderColor: 'rgb(41, 155, 99)',
+            showLine: false,
+            borderWidth: 1
+            
+        }]
+        
+    },
+    
+    options: {
+        
+        onClick: function(evt, activeElements) {
+            alert("Anomaly detected!!")
+            var elementIndex = activeElements[0]._index;
+      this.data.datasets[0].pointBackgroundColor[elementIndex] = 'green';
+      this.update();
+    },
+        
+        plugins: {
+            labels: {
+                    fontColor: "black",
+                    
+                },
+            legend: {
+                display: false,
+                
+            }},
+        scales: {
+        x: {
+        ticks: {display:false} ,
+        grid: {
+        display: false,
+        borderWidth: 0,
+                }},
+        y: {
+        beginAtZero: true,
+        ticks: {display:false,min:20, max:50} ,
+        
+        grid: {
+            
+         display: false,
+         borderWidth: 0,
+         
+        } }},
+        
+      
+    }
+    
+});
+    </script>
+    <script src="/chart2.js"></script>
+    <script>
+      
+        var ctx = document.getElementById('doughnut').getContext('2d');
+        const time = ("<%-time_string%>");
+       //alert(key)
+     //  alert(typeof key)
+       var times = time.split(',');
+      
+     // alert(typeof(keys))
+       const timevalue = ("<%-value_string%>");
+       var timevalues = timevalue.split(',');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: times,
+
+        datasets: [{
+            label: 'Data Readings',
+            data: timevalues,
+            backgroundColor: [
+                'green'
+
+            ],
+            borderColor: [
+                'green'
+                
+
+            ],
+            borderWidth: 1
+        }]
+
+    },
+    options: {
+        
+        responsive: false,
+        animation: {
+            animateScale: false,
+            animateRotate: false
+        }
+    }
+});
+    </script>
+    
+    
+</script>
+ 
+<script type = "text/JavaScript">
+    <!--
+       function AutoRefresh( t ) {
+          setTimeout("location.reload(true);", t);
+       }
+    //-->
+ </script>
+   
+
+</body>
+
+</html>
